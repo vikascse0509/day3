@@ -4,7 +4,6 @@ const App = () => {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/todos/")
       .then((res) => res.json())
@@ -48,6 +47,7 @@ const App = () => {
             <th className="border px-4 py-2 text-left text-grey-400">
               Completed
             </th>
+            <th className="border px-4 py-2 text-left text-grey-400">Image</th>
           </tr>
         </thead>
         <tbody>
@@ -59,6 +59,13 @@ const App = () => {
               </td>
               <td className=" border border-gray-300 px-4 py-2">
                 {item.completed ? "Yes" : "No"}
+              </td>
+              <td>
+                <img
+                  className="border border-gray-300 px-4 py-"
+                  src="https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg"
+                  alt=""
+                />
               </td>
             </tr>
           ))}
